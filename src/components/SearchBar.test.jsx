@@ -16,7 +16,8 @@ import matchers from '@testing-library/jest-dom/matchers';
 import { Provider } from 'react-redux';
 import SearchBar from './SearchBar';
 import store from '../states/index';
-import { setLangIndActionCreator } from '../states/lang/action';
+import { setLangEngActionCreator } from '../states/lang/action';
+import { act } from 'react-dom/test-utils';
 
 expect.extend(matchers);
 
@@ -33,13 +34,15 @@ describe('SearchBar component', () => {
       </Provider>,
     );
 
-    const categoryInput = await screen.getByPlaceholderText('Search by category');
+    const categoryInput = await screen.getByPlaceholderText('Cari kategori');
 
     // assert
     expect(categoryInput).toBeInTheDocument();
 
     // action indonesia
-    store.dispatch(setLangIndActionCreator);
+    act(() => {
+      store.dispatch(setLangEngActionCreator());
+    });
 
     const updatedCategoryInput = await screen.getByPlaceholderText('Search by category');
 
