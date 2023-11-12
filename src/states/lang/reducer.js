@@ -1,6 +1,6 @@
 import { ActionType } from './action';
 
-function langReducer(lang = localStorage.getItem('lang'), action = {}) {
+function langReducer(lang = localStorage.getItem('lang') || 'ind', action = {}) {
   switch (action.type) {
     case ActionType.SET_LANG_IND:
       localStorage.setItem('lang', action.payload);

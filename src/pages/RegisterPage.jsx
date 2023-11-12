@@ -12,9 +12,11 @@ function RegisterPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const onRegister = ({ name, email, password }) => {
-    dispatch(asyncRegisterUser({ name, email, password }));
-    navigate('/login');
+  const onRegister = async ({ name, email, password }) => {
+    const result = await dispatch(asyncRegisterUser({ name, email, password }));
+    if (!result) {
+      navigate('/login');
+    }
   };
 
   const handleLangInd = () => {
