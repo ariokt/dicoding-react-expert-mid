@@ -47,7 +47,7 @@ function LoginPage() {
               ,
               {' '}
               <br />
-              Through Dicoding Forum.
+              Through Dicoding Forum App.
             </h2>
             )}
           {lang === 'ind'
@@ -59,7 +59,7 @@ function LoginPage() {
               ,
               {' '}
               <br />
-              Melalui Forum Dicoding.
+              Melalui Aplikasi Forum Dicoding.
             </h2>
             )}
           <LoginInput login={onLogin} />
