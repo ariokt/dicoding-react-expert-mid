@@ -3,7 +3,7 @@
  *   - should display register page correctly
  *   - should display alert when name is empty
  *   - should display alert when email is empty
- *   - should display alert when user input wrong email format 
+ *   - should display alert when user input wrong email format
  *   - should display alert when password is empty
  *   - should display alert when password length lower than 6
  *   - should display login page when register success
@@ -87,7 +87,7 @@ describe('Register spec', () => {
   });
 
   it('should display login page when register success', () => {
-    const randomEmail = Cypress._.random(0, 1e6) + '@example.com';
+    const randomEmail = `${Cypress._.random(0, 1e6)}@example.com`;
     cy.visit('http://localhost:5173/register');
 
     // input name
@@ -105,4 +105,4 @@ describe('Register spec', () => {
     // verifikasi elemen pada halaman login tampil
     cy.get('button').contains(/^Login$/).should('be.visible');
   });
-})
+});

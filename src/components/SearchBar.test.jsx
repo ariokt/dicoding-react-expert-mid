@@ -14,10 +14,10 @@ import {
 import userEvent from '@testing-library/user-event';
 import matchers from '@testing-library/jest-dom/matchers';
 import { Provider } from 'react-redux';
+import { act } from 'react-dom/test-utils';
 import SearchBar from './SearchBar';
 import store from '../states/index';
 import { setLangEngActionCreator } from '../states/lang/action';
-import { act } from 'react-dom/test-utils';
 
 expect.extend(matchers);
 

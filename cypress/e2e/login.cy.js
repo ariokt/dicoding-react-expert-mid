@@ -2,7 +2,7 @@
  * - Login spec
  *   - should display login page correctly
  *   - should display alert when email is empty
- *   - should display alert when user input wrong email format 
+ *   - should display alert when user input wrong email format
  *   - should display alert when password is empty
  *   - should display alert when email and password are wrong
  *   - should display homepage when email and password are correct
@@ -94,4 +94,4 @@ describe('Login spec', () => {
     cy.get('div').contains(/^DICODING FORUM APP$/).should('be.visible');
     cy.get('a[href="/add-thread"]').should('be.visible');
   });
-})
+});
