@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import useInput from '../hooks/useInput';
 import { asyncAddNewThread } from '../states/threads/action';
 import Loading from '../components/Loading';
+import Button from '../components/Button';
 
 function AddThreadPage() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ function AddThreadPage() {
       <input type="text" placeholder="Judul" className="add-thread__input w-100 mb-2" value={title} onChange={handleInputJudul} required />
       <input type="text" placeholder="Kategori" className="add-thread__input w-100 mb-2" value={category} onChange={handleInputKategori} />
       <textarea className="add-thread__input w-100 mb-2" value={body} onChange={handleInputBody} required />
-      <button type="submit" className="add-thread__button w-100" onClick={onSumbit}>Buat</button>
+      <Button onClick={onSumbit} text="Buat" type="primary" />
     </>
   );
 }

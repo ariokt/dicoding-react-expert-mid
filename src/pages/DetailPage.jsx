@@ -17,6 +17,7 @@ import { postedAt } from '../utils';
 import useInput from '../hooks/useInput';
 import CommentsList from '../components/CommentsList';
 import Loading from '../components/Loading';
+import Button from '../components/Button';
 
 function DetailPage() {
   const { detailThread = null, authUser } = useSelector((states) => states);
@@ -106,7 +107,7 @@ function DetailPage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-2">Beri Komentar</h5>
         <textarea className="add-thread__input w-100 mb-2" value={comment} onChange={handleInputComment} required />
-        <button type="submit" className="add-thread__button w-100" onClick={onSumbit}>Kirim</button>
+        <Button text="Kirim" type="primary" onClick={onSumbit} />
       </div>
       <div className="mb-4">
         <h5 className="fw-bold mb-2">

@@ -7,6 +7,7 @@ import {
 } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { postedAt } from '../utils';
+import Tag from './Tag';
 
 function ThreadItem(props) {
   const {
@@ -42,7 +43,7 @@ function ThreadItem(props) {
         <header className="d-flex align-items-center">
           <div className="talk-item__user-info d-flex align-items-center gap-3">
             <p className="talk-item__user-name">{user.name}</p>
-            <div className="talk-item__category">{category}</div>
+            <Tag text={category} type="primary" />
           </div>
           <p className="talk-item__created-at">{postedAt(createdAt)}</p>
         </header>
